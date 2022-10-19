@@ -22,6 +22,11 @@ actor DKeeper {
     //list that addes newNote to the notes array
     notes := List.push(newNote, notes);
     Debug.print(debug_show(notes));
-  }
+  };
+
+  //passing the notes into the List.toArray and returning the Note array
+  public query func readNotes() : async [Note] {
+    return List.toArray(notes);
+  };
 
 };
